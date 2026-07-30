@@ -5,13 +5,12 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: get code
-                uses: actions/checkout@v7
-            -name: install nodejs
-                uses: actions/setup-node@v7
-                with:
+            uses: actions/checkout@v7
+            - name: install nodejs
+            uses: actions/setup-node@v7
+            with:
                     node-version: 24
-            name: install dependencies
+            - name: install dependencies
                 run: npm ci
-            name: run test
+            - name: run test
                 run: npm test
-            
